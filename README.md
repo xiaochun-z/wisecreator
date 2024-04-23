@@ -72,8 +72,6 @@ python -m venv venv
 .\venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 
-# install kindleunpack
-
 # now launch python and download the required data, type these commands one by one.
 python
 import nltk
