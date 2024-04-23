@@ -60,3 +60,37 @@ To enable wordwise, the lang meta data of your .mobi files should be set to `eng
 
 ---
 
+## how to run the script (windows guide)
+1. Install Python: https://www.python.org/downloads/
+2. Install calibre: https://calibre-ebook.com/download
+3. add clibre to your system path(the folder where contains the ebook-convert.exe)
+4. install depedencies and run
+```bash
+# launch windows powershell
+cd your/path/to/wisecreator # you have to replace this to your real path
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+
+# install kindleunpack
+
+# now launch python and download the required data, type these commands one by one.
+python
+import nltk
+nltk.download('averaged_perceptron_tagger') # you have to wait a while, it depends on your internet connection
+nltk.download('wordnet') # you have to wait a while, it depends on your internet connection
+exit()
+
+# start to convert to book
+python -m wisecreator.main 'E:\downloads\The Three-Body Problem - Cixin Liu.mobi'
+# You shold see something like this:
+#
+# [.] Checking dependencies
+# [.] Getting ASIN
+# [.] Getting rawml content of the book
+# [.] Collecting words
+# [.] Count of words: 120811
+# [.] Processing words:  |+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++| 100.0% 
+# [.] Success!
+# Now copy this folder: "E:\downloads\The Three-Body Problem - Cixin Liu-WordWised" to your Kindle
+```
